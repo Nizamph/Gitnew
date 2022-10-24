@@ -74,6 +74,7 @@ function onSubmit(e) {
 
 //        PhoneInput.value = '';
 //     }
+//
  }
 
 // function for storing data into local storage:-

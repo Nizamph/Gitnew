@@ -22,6 +22,7 @@ var title = document.getElementsByClassName('title')
 var main = document.getElementById('main');
 console.log(headerTitle);
  headerTitle.textContent = 'hello'
+ //headerTitle.innertext = "goodbye"//this is also change the content of the text but unlike textcontent is focused on styling part
 console.log(headerTitle.textContent)
 header.style.borderBottom = 'solid 3px #000'
 var title = document.getElementsByClassName('title');

@@ -11,21 +11,25 @@ itemsList.addEventListener('click', removeItem)
 //filter event
 filter.addEventListener('keyup', filterItems);
 
+
 //add item
 function addItem(e){
     e.preventDefault();
 
 //get input value
 var newItem = document.getElementById('item').value;
-
+//get input from description box
+var description = document.getElementById('description').value;
 // create new li element
 var li = document.createElement('li');
 //add class
 li.className = 'list-group-item';
 // Add text node with input value
 li.appendChild(document.createTextNode(newItem));
+// Add text node with input value for description box:-
+li.appendChild(document.createTextNode(" "+description)); 
 
-//create del vutton element
+//create del button element
 var deleteBtn = document.createElement('button');
 
 //add classes to del button
@@ -57,7 +61,9 @@ li.appendChild(editBtn);
 itemsList.appendChild(li)
 
 
-createBtn(li)
+
+
+
 }
 
 //remove item
@@ -80,13 +86,17 @@ function filterItems(e){
    //convert to an array
    Array.from(items).forEach(function(item){
     var itemName = item.firstChild.textContent;
-    if(itemName.toLowerCase().indexOf(text) != -1){
+    var description = item.childNodes[1].textContent
+    if(itemName.toLowerCase().indexOf(text) != -1 || description.toLowerCase().indexOf(text) != -1){
         item.style.display = 'block';
     }else {
         item.style.display = 'none';
     }
    });
 }
+
+
+
 // adding edit button next to delete button
 const li = itemsList.children;//here we will get li
 
@@ -99,7 +109,6 @@ function createBtn(li) {
 }
 
 for(var i = 0; i<li.length; i++){
-   createBtn(li[i])// iterate for adding through the li for adding edit in each and every item
+   createBtn(li[i])// iterate for adding 'edit' along with each and every item
 
 }
-

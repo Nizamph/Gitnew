@@ -40,12 +40,12 @@
 
 // //TASK 6 Q1)DELIVERABLES IN  QUERY SELECTOR:-
 
-// var items = document.querySelector('.list-group-item:nth-child(2)');
-// items.style.color = 'green';
+var items = document.querySelector('.list-group-item:nth-child(2)');
+items.style.color = 'green';
 
 
-// var items = document.querySelector('.list-group-item:nth-child(3)')
-// items.style.visibility = 'hidden';
+var items = document.querySelector('.list-group-item:nth-child(3)')//delete item 3 from the list
+items.style.visibility = 'hidden';
 
 // Q2)DELIVERABLES IN QUERYSELECTOR ALL:-
 
