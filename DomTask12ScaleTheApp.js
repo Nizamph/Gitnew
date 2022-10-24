@@ -53,28 +53,28 @@ function onSubmit(e) {
 
         setTimeout(() => msg.remove(), 3000)// after 3 second that error message will go away.
     }
-    else {
+    //one way to show the user details on li 
+//     else {
 
-        //if user fill all the field we want to grab the data from input field
+//         //if user fill all the field we want to grab the data from input field
 
-        const li = document.createElement('li');
+//         const li = document.createElement('li');
 
-        li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`));
-
-
-        userList.appendChild(li);
+//         li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`));
 
 
-        //clear the fields
+//         userList.appendChild(li);
 
-       nameInput.value = '';
 
-       emailInput.value = '';
+//         //clear the fields
 
-       PhoneInput.value = '';
-    }
+//        nameInput.value = '';
 
-}
+//        emailInput.value = '';
+
+//        PhoneInput.value = '';
+//     }
+ }
 
 // function for storing data into local storage:-
 
@@ -88,6 +88,14 @@ function SaveToLocalStorage(event){
                         email,
                         phonenumber
                         }
+//another way to show the details on li
+            const keysArr = Object.keys(UserDetails)
+            let li = document.createElement('li');
+            let userList = document.querySelector('#users')
+            keysArr.forEach(key =>{
+                  li.appendChild(document.createTextNode(UserDetails[key]))
+                  userList.appendChild(li)
+            })
 
     localStorage.setItem(UserDetails.email, JSON.stringify(UserDetails))     
     
