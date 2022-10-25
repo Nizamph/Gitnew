@@ -4,7 +4,7 @@
  var filter = document.getElementById('filter');
 // form submit event 
 form.addEventListener('submit', addItem)
-
+//
 //Delete event
 itemsList.addEventListener('click', removeItem)
 
